@@ -1,0 +1,13 @@
+div
+    div(class='user-detials')
+        div {{$ctrl.user.initials}}
+        div {{$ctrl.user.name}}
+        div {{$ctrl.user.rolesText}}
+        div
+            button(ng-click='$ctrl.edit = !$ctrl.edit') Edit
+    div(class='user-edit-details', ng-if="$ctrl.edit")
+        div
+            label Username:
+            input(type='text' ng-model='$ctrl.user.name')
+        div
+            role-selector(roles='$ctrl.user.roles' on-update='$ctrl.updateRoles($ctrl.user, roles)')

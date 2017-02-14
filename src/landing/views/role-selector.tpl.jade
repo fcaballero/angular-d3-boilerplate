@@ -1,0 +1,4 @@
+div(class='role-selector')
+    label(ng-repeat='role in $ctrl.mappedRoles')
+        input(type='checkbox' ng-model='role.isSelected' ng-change='$ctrl.updateRoles()')
+        span {{role.name}}
